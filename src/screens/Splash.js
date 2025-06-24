@@ -7,8 +7,8 @@ import {
   Dimensions,
 } from 'react-native';
 
-import Fonts from '../constants/font';
-import Colors from '../constants/color';
+import Fonts from '../constants/Font';
+import Colors from '../constants/Color';
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
