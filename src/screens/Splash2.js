@@ -9,8 +9,8 @@ import {
   Dimensions,
 } from 'react-native';
 
-import Colors from '../constants/color';
-import Fonts from '../constants/font';
+import Colors from '../constants/Color';
+import Fonts from '../constants/Font';
 
 const Splash2 = ({navigation}) => {
   return (
@@ -33,7 +33,7 @@ const Splash2 = ({navigation}) => {
         </Text>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('Login')}>
+          <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('LoginScreen')}>
             <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.registerButton} onPress={() =>navigation.navigate('SignupPage')}>
