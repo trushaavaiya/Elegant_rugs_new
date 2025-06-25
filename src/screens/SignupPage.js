@@ -68,7 +68,7 @@ const SignupPage = ({ navigation }) => {
             onChangeText={setConfirmPassword}
           />
 
-          <TouchableOpacity style={styles.registerButton}>
+          <TouchableOpacity style={styles.registerButton} onPress={() => navigation.navigate('IntroScreen1')}>
             <Text style={styles.registerText}>REGISTER</Text>
           </TouchableOpacity>
 
