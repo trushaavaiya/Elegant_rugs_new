@@ -31,6 +31,23 @@ const NewPasswordScreen = ({ route, navigation }) => {
     }
   };
 
+  const clearText = () => {
+    const cleared = ['', '', '', ''];
+    setOtp(cleared);
+    inputs.current.forEach((input, index) => {
+      if (input) input.clear();
+    });
+    inputs.current[0]?.focus();
+  };
+
+  const setText = () => {
+    const prefilled = ['1', '2', '3', '4'];
+    setOtp(prefilled);
+    inputs.current.forEach((input, index) => {
+      if (input) input.setNativeProps({ text: prefilled[index] });
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
@@ -60,6 +77,15 @@ const NewPasswordScreen = ({ route, navigation }) => {
               onChangeText={(text) => handleChange(text, index)}
             />
           ))}
+        </View>
+
+        <View style={styles.buttonRow}>
+          <TouchableOpacity style={styles.utilityButton} onPress={clearText}>
+            <Text style={styles.utilityButtonText}>Clear OTP</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.utilityButton} onPress={setText}>
+            <Text style={styles.utilityButtonText}>Auto-Fill OTP</Text>
+          </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={styles.submitButton} onPress={() => navigation.navigate('ResetPasswordScreen')}>
@@ -109,7 +135,7 @@ const styles = StyleSheet.create({
   otpContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 30,
+    marginBottom: 20,
     backgroundColor: Colors.lightGrey,
     borderRadius: 30,
     padding: 10,
@@ -123,6 +149,24 @@ const styles = StyleSheet.create({
     fontSize: Fonts.size.medium,
     fontFamily: Fonts.regular,
     color: Colors.black,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  utilityButton: {
+    flex: 1,
+    marginHorizontal: 5,
+    backgroundColor: Colors.lightGrey,
+    paddingVertical: 10,
+    borderRadius: 20,
+    alignItems: 'center',
+  },
+  utilityButtonText: {
+    color: Colors.primary,
+    fontFamily: Fonts.medium,
+    fontSize: Fonts.size.small,
   },
   submitButton: {
     backgroundColor: Colors.primary,
