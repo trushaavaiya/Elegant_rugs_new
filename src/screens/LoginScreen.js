@@ -64,7 +64,7 @@ const LoginScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.forgotWrapper} onPress={()=>navigation.navigate('ForgotPassword')}>
+        <TouchableOpacity style={styles.forgotWrapper} onPress={()=>navigation.navigate('ForgotPasswordScreen')}>
           <Text style={styles.forgot}>Forgot Password?</Text>
         </TouchableOpacity>
 
@@ -85,7 +85,7 @@ const LoginScreen = ({navigation}) => {
 
         <Text style={styles.registerText}>
           Don’t have an account?{' '}
-          <Text style={styles.registerLink} onPress={()=>navigation.navigate('SignupPage')}>Register</Text>
+          <Text style={styles.registerLink} onPress={()=>navigation.navigate('SignupScreen')}>Register</Text>
         </Text>
       </View>
     </SafeAreaView>
