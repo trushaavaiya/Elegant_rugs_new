@@ -36,7 +36,7 @@ const Splash2Screen = ({navigation}) => {
           <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('LoginScreen')}>
             <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.registerButton} onPress={() =>navigation.navigate('SignupPage')}>
+          <TouchableOpacity style={styles.registerButton} onPress={() =>navigation.navigate('SignupScreen')}>
             <Text style={styles.registerText}>REGISTER</Text>
           </TouchableOpacity>
         </View>
