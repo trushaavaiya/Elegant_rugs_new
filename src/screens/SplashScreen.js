@@ -13,7 +13,7 @@ import Colors from '../constants/Color';
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.navigate('Splash2');  
+      navigation.navigate('Splash2Screen');  
     }, 3000); 
 
     return () => clearTimeout(timer);  
