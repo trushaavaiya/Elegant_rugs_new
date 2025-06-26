@@ -3,7 +3,7 @@ import Root from './src/navigation/Root';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
-
+// just for demo
   return (
     <View style={styles.container}>
       
