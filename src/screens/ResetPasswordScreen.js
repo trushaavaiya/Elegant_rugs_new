@@ -45,7 +45,7 @@ const ResetPasswordScreen = ({ navigation }) => {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('SignupPage')}
+          onPress={() => navigation.navigate('SignupScreen')}
         >
           <Text style={styles.buttonText}>RESET PASSWORD</Text>
         </TouchableOpacity>
