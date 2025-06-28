@@ -55,7 +55,7 @@ const IntroScreen3 = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.navigate('IntroScreen2')}>
             <Icon name="chevron-back-outline" size={24} color={Colors.black} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('Splash')}>
+          <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('HomeScreen')}>
             <Icon name="chevron-forward-outline" size={24} color={Colors.white} />
           </TouchableOpacity>
         </View>
