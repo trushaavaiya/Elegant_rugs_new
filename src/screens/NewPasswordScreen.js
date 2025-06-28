@@ -27,16 +27,14 @@ const NewPasswordScreen = ({ route, navigation }) => {
     setOtp(newOtp);
 
     if (text && index < 3) {
-      inputs.current[index + 1].focus();
+      inputs.current[index + 1]?.focus();
     }
   };
 
   const clearText = () => {
     const cleared = ['', '', '', ''];
     setOtp(cleared);
-    inputs.current.forEach((input, index) => {
-      if (input) input.clear();
-    });
+    inputs.current.forEach((input) => input?.clear());
     inputs.current[0]?.focus();
   };
 
@@ -75,6 +73,18 @@ const NewPasswordScreen = ({ route, navigation }) => {
               maxLength={1}
               value={otp[index]}
               onChangeText={(text) => handleChange(text, index)}
+              onKeyPress={({ nativeEvent }) => {
+                if (
+                  nativeEvent.key === 'Backspace' &&
+                  otp[index] === '' &&
+                  index > 0
+                ) {
+                  const newOtp = [...otp];
+                  newOtp[index - 1] = '';
+                  setOtp(newOtp);
+                  inputs.current[index - 1]?.focus();
+                }
+              }}
             />
           ))}
         </View>
