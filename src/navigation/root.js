@@ -3,15 +3,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import SplashScreen from '../screens/SplashScreen';                   //1
-import Splash2Screen from '../screens/Splash2Screen';                       //2
+import Splash2Screen from '../screens/Splash2Screen';                 //2
 import LoginScreen from '../screens/LoginScreen';                     //3
-import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
+import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';   //4
 import NewPasswordScreen from '../screens/NewPasswordScreen';         //5
 import ResetPasswordScreen from '../screens/ResetPasswordScreen';     //6
 import SignupScreen from '../screens/SignupScreen';                   //7
 import IntroScreen1 from '../screens/IntroScreen1';                   //8
 import IntroScreen2 from '../screens/IntroScreen2';                   //9
 import IntroScreen3 from '../screens/IntroScreen3';                   //10
+import HomeScreen from '../screens/HomeScreen';
+
 
 
 
@@ -34,6 +36,7 @@ const Root = () => {
         <Stack.Screen name="IntroScreen1" component={IntroScreen1} />
         <Stack.Screen name="IntroScreen2" component={IntroScreen2} />
         <Stack.Screen name="IntroScreen3" component={IntroScreen3} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
