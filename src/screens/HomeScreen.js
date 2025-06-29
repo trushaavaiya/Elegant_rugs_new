@@ -33,6 +33,8 @@ const HomeScreen = () => {
     { title: 'See All', image: require('../assets/category-seeall.png') },
   ];
 
+  
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -66,6 +68,23 @@ const HomeScreen = () => {
             ))}
           </View>
         </View>
+
+        <Text style={styles.sectionTitle}>TOP CATEGORIES</Text>
+        <View style={styles.categoryGrid}>
+          {categoryData.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              style={[styles.categoryItem, item.title === 'See All' && styles.seeAllCategory]}
+            >
+              <Image source={item.image} style={styles.categoryIcon} />
+              <Text style={[styles.categoryText, item.title === 'See All' && styles.seeAllText]}>
+                {item.title}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        
 
           
           
@@ -111,6 +130,46 @@ const styles = StyleSheet.create({
     marginTop: 4,
     alignSelf: 'flex-start',
   },
+  bannerBox: {
+    flexDirection: 'row',
+    marginTop: 16,
+    backgroundColor: Colors.white2,
+    borderRadius: 12,
+    padding: 12,
+  },
+  bannerImage: { width: width * 0.5, height: 100 },
+  discountBox: { flex: 1, justifyContent: 'center', paddingLeft: 16 },
+  discountText: { fontFamily: Fonts.regular, fontSize: Fonts.size.small, color: Colors.black },
+  discountPercent: { fontFamily: Fonts.bold, fontSize: Fonts.size.xlarge, color: Colors.primary },
+  discountNote: { fontFamily: Fonts.regular, fontSize: Fonts.size.small, color: Colors.black },
+  dotsContainer: { flexDirection: 'row', justifyContent: 'center', marginTop: 8 },
+  dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: Colors.grey, marginHorizontal: 4 },
+  sectionTitle: {
+    fontFamily: Fonts.bold,
+    fontSize: Fonts.size.medium,
+    color: Colors.black,
+    marginHorizontal: 16,
+    marginVertical: 12,
+    
+  },
+  categoryGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    marginHorizontal: 16,
+    
+  },
+  categoryItem: {
+    width: '22%',
+    paddingVertical: 10,
+    marginVertical: 6,
+    backgroundColor: Colors.lightGrey,
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  seeAllCategory: { backgroundColor: Colors.black },
+  seeAllText: { color: Colors.white },
+  categoryText: { fontFamily: Fonts.regular, fontSize: Fonts.size.small },
   
   
 });
