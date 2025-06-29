@@ -32,6 +32,18 @@ const HomeScreen = () => {
     { title: 'Floral', image: require('../assets/category-floral.png') },
     { title: 'See All', image: require('../assets/category-seeall.png') },
   ];
+  const rugImages = [
+    require('../assets/rug1.png'),
+    require('../assets/rug2.png'),
+    require('../assets/rug3.png'),
+    require('../assets/rug4.png'),
+    require('../assets/rug5.png'),
+  ];
+  const services = [
+    { label: 'Best Service', icon: require('../assets/service-best.png') },
+    { label: '100% Authentic', icon: require('../assets/service-authentic.png') },
+    { label: 'Fastest Delivery', icon: require('../assets/service-fast.png') },
+  ];
 
   
 
@@ -84,6 +96,40 @@ const HomeScreen = () => {
           ))}
         </View>
 
+        {renderHorizontalList('ALL RUGS', rugImages.slice(0, 3))}
+
+        
+        {renderHorizontalList('RECENTLY VIEWED', rugImages)}
+
+        
+        {renderHorizontalList('SIMILAR PRODUCTS', rugImages)}
+
+        
+        <View style={styles.serviceRow}>
+          {services.map((item, index) => (
+            <View key={index} style={styles.serviceItem}>
+              <Image source={item.icon} style={styles.serviceIcon} />
+              <Text style={styles.serviceText}>{item.label}</Text>
+            </View>
+          ))}
+        </View>
+
+        
+        {renderHorizontalList('SPOTLIGHT RUGS', rugImages)}
+
+        
+        <Text style={styles.sectionTitle}>SHOP BY SIZE (FT)</Text>
+        <View style={styles.sizeList}>
+          {["12x16", "16x20", "20x24", "24x26", "26x28", "28x30"].map((size, index) => (
+            <View key={index} style={styles.sizeItem}>
+              <Text style={styles.sizeText}>{size}</Text>
+            </View>
+          ))}
+        </View>
+
+        
+        {renderHorizontalList('POPULAR RUGS', rugImages)}
+
         
 
           
@@ -110,6 +156,24 @@ const HomeScreen = () => {
     </SafeAreaView>
   );
 };
+const renderHorizontalList = (title, images) => (
+  <View style={styles.productSection}>
+    <View style={styles.sectionHeader}>
+      <Text style={styles.sectionTitle}>{title}</Text>
+      <Text style={styles.seeAllLink}>See All</Text>
+    </View>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      {images.map((img, index) => (
+        <View key={index} style={styles.rugCard}>
+          <Image source={img} style={styles.rugImage} />
+          <Text style={styles.productName}>Rug {index + 1}</Text>
+          <Text style={styles.productPrice}>₹ {8990 + index * 500}</Text>
+          <Icon name="cart-outline" size={16} color={Colors.primary} style={{ marginTop: 4 }} />
+        </View>
+      ))}
+    </ScrollView>
+  </View>
+);
 
 
 
@@ -170,6 +234,77 @@ const styles = StyleSheet.create({
   seeAllCategory: { backgroundColor: Colors.black },
   seeAllText: { color: Colors.white },
   categoryText: { fontFamily: Fonts.regular, fontSize: Fonts.size.small },
+  categoryIcon: { width: 24, height: 24, marginBottom: 6 },
+  productSection: { marginTop: 16 },
+  sectionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 16,
+    marginBottom: 8,
+  },
+  seeAllLink: {
+    fontSize: Fonts.size.small,
+    color: Colors.primary,
+    fontFamily: Fonts.regular,
+  },
+  rugCard: {
+    width: 150,
+    marginHorizontal: 8,
+    backgroundColor: Colors.white2,
+    borderRadius: 10,
+    padding: 8,
+    alignItems: 'center',
+  },
+  rugImage: { width: 120, height: 120, borderRadius: 8 },
+  productName: {
+    fontFamily: Fonts.regular,
+    fontSize: Fonts.size.small2,
+    color: Colors.black,
+    textAlign: 'center',
+    marginTop: 6,
+  },
+  productPrice: {
+    fontFamily: Fonts.bold,
+    fontSize: Fonts.size.small2,
+    color: Colors.black,
+    textAlign: 'center',
+  },
+  serviceRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginVertical: 20,
+  },
+  serviceItem: { alignItems: 'center' },
+  serviceIcon: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+    marginBottom: 8,
+    
+  },
+  serviceText: {
+    fontFamily: Fonts.regular,
+    fontSize: Fonts.size.small,
+    color: Colors.black,
+  },
+  sizeList: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginHorizontal: 20,
+    gap: 20,
+  },
+  sizeItem: {
+    backgroundColor: Colors.lightGrey,
+    paddingVertical: 12,
+    paddingHorizontal: 28,
+    borderRadius: 20,
+    marginBottom: 0,
+  },
+  sizeText: {
+    fontSize: Fonts.size.small,
+    fontFamily: Fonts.regular,
+    color: Colors.black,
+  },
   
   
 });
