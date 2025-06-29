@@ -128,28 +128,25 @@ const HomeScreen = () => {
         </View>
 
         
-        {renderHorizontalList('POPULAR RUGS', rugImages)}
-
-        
-
-          
-          
-        
-
-        
-        
-
-      
-       
-
-        
-        
-
-        
-
-        
-        
+        {renderHorizontalList('POPULAR RUGS', rugImages)}  
       </ScrollView>
+      <View style={styles.bottomNav}>
+        {['Home', 'Category', 'Cart', 'Offers', 'Account'].map((item, index) => (
+          <TouchableOpacity key={index} style={styles.navItem}>
+            <Icon
+              name={
+                item === 'Home' ? 'home' :
+                item === 'Category' ? 'grid' :
+                item === 'Cart' ? 'cart' :
+                item === 'Offers' ? 'pricetags' : 'person'
+              }
+              size={22}
+              color={Colors.black}
+            />
+            <Text style={styles.navText}>{item}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
 
       
       
@@ -302,6 +299,20 @@ const styles = StyleSheet.create({
   },
   sizeText: {
     fontSize: Fonts.size.small,
+    fontFamily: Fonts.regular,
+    color: Colors.black,
+  },
+  bottomNav: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: Colors.white,
+    paddingVertical: 10,
+    borderTopWidth: 1,
+    borderColor: Colors.lightGrey,
+  },
+  navItem: { alignItems: 'center' },
+  navText: {
+    fontSize: Fonts.size.xsmall,
     fontFamily: Fonts.regular,
     color: Colors.black,
   },
