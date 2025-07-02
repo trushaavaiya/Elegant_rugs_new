@@ -29,6 +29,17 @@ const CategoryScreen = ({ navigation }) => {
           <Icon name="close" size={24} color={Colors.white} />
         </TouchableOpacity>
       </View>
+
+      <View style={styles.titleContainer}>
+        <Text style={styles.chooseText}>Choose The</Text>
+        <Text style={styles.categoryBold}>
+          Category <Text style={styles.chooseText}>As Per</Text>
+        </Text>
+
+        <View style={styles.choiceBox}>
+          <Text style={styles.choiceText}>YOUR CHOICE</Text>
+        </View>
+      </View>
      
     </SafeAreaView>
   );
@@ -50,6 +61,32 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: Fonts.size.medium,
     fontFamily: Fonts.bold,
+  },
+  titleContainer: {
+    marginTop: 30,
+  },
+  chooseText: {
+    color: Colors.white,
+    fontSize: Fonts.size.large,
+    fontFamily: Fonts.regular,
+  },
+  categoryBold: {
+    fontSize: Fonts.size.xlarge,
+    fontFamily: Fonts.bold,
+    color: Colors.white,
+  },
+  choiceBox: {
+    backgroundColor: Colors.primary,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    marginTop: 10,
+    alignSelf: 'flex-start',
+    borderRadius: 4,
+  },
+  choiceText: {
+    color: Colors.white,
+    fontFamily: Fonts.bold,
+    fontSize: Fonts.size.small,
   },
   
 });
