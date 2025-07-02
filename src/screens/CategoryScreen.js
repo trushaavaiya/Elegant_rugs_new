@@ -89,7 +89,7 @@ const CategoryScreen = ({ navigation }) => {
       </View>
       <TouchableOpacity
         style={styles.nextButton}
-        onPress={() => navigation.navigate('NextScreen')} 
+        onPress={() => navigation.navigate('ProductListingScreen')} 
       >
         <Text style={styles.nextText}>NEXT</Text>
       </TouchableOpacity>
