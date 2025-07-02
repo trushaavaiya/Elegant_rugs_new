@@ -14,6 +14,7 @@ import IntroScreen2 from '../screens/IntroScreen2';                   //9
 import IntroScreen3 from '../screens/IntroScreen3';                   //10
 import HomeScreen from '../screens/HomeScreen';                       //11
 import CategoryScreen from '../screens/CategoryScreen';               //12
+import ProductListingScreen from '../screens/ProductListingScreen';   //13
 
 
 
@@ -38,6 +39,7 @@ const Root = () => {
         <Stack.Screen name="IntroScreen3" component={IntroScreen3} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
+        <Stack.Screen name="ProductListingScreen" component={ProductListingScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
