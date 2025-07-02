@@ -13,6 +13,10 @@ const Colors = {
   gradientBlack: ['#000000', '#1a1a1a'], 
   gradientBlackSoft: ['#1a1a1a', '#333333'],
   gradientBlackToTransparent: ['#000000', 'transparent'],
+
+  background: '#0E0E0E',
+  darkBox: '#1E1E1E',
+  tagBackground: '#C48656',
 };
 
 export default Colors;

@@ -15,7 +15,7 @@ import Fonts from '../constants/Font';
 
 const { width } = Dimensions.get('window');
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const bannerImages = [
     require('../assets/sofa1.png'),
     require('../assets/sofa2.png'),
@@ -87,6 +87,7 @@ const HomeScreen = () => {
             <TouchableOpacity
               key={index}
               style={[styles.categoryItem, item.title === 'See All' && styles.seeAllCategory]}
+              onPress={() => navigation.navigate('CategoryScreen')}
             >
               <Image source={item.image} style={styles.categoryIcon} />
               <Text style={[styles.categoryText, item.title === 'See All' && styles.seeAllText]}>
