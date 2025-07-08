@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   },
   title: { fontSize: Fonts.size.large, fontFamily: Fonts.bold },
   subtitle: { color: Colors.grey, marginTop: 5, fontFamily: Fonts.regular },
-  rating: { color: '#F39C12', fontWeight: 'bold' },
+  rating: { color: Colors.starcolor, fontWeight: 'bold' },
   reviewText: { color: Colors.primary },
   quantityRow: { flexDirection: 'row', alignItems: 'center', marginVertical: 10 },
   quantityButton: {
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   quantity: { marginHorizontal: 10, fontSize: Fonts.size.medium },
-  discount: { color: '#E74C3C', fontWeight: 'bold', fontSize: Fonts.size.medium },
+  discount: { color: Colors.discount, fontWeight: 'bold', fontSize: Fonts.size.medium },
   price: { fontSize: Fonts.size.large, fontWeight: 'bold', marginVertical: 5 },
   sectionHeaderRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 15 },
   sectionHeader: { fontSize: Fonts.size.medium, fontWeight: 'bold', marginVertical: 10 },
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   buttonRow: {
     flexDirection: 'row',
     marginTop: 20,
-    shadowColor: '#000',
+    shadowColor: Colors.black2 ,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
