@@ -4,6 +4,7 @@ const Colors = {
   white: '#FFFFFF',
   grey:'#666',
   white2:'#F5F0EC',
+  black2:'#000',
 
   lightGrey: '#F5F5F5',   
   textGrey: '#999999',
@@ -31,6 +32,10 @@ const Colors = {
     '#7B6139',
     '#E0B854',
   ],
+
+  starcolor:'#F39C12',
+  discount:'#E74C3C',
+
 };
 
 export default Colors;
