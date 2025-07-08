@@ -17,6 +17,20 @@ const Colors = {
   background: '#0E0E0E',
   darkBox: '#1E1E1E',
   tagBackground: '#C48656',
+
+  borderGrey: '#ccc',
+  overlayBlack: 'rgba(0,0,0,0.6)',
+
+  filterPalette: [
+    '#C5E5E4',
+    '#F7D0DB',
+    '#6D8FA7',
+    '#9BC4CB',
+    '#4B7249',
+    '#A8495D',
+    '#7B6139',
+    '#E0B854',
+  ],
 };
 
 export default Colors;
