@@ -12,10 +12,14 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '../constants/Color';
 import Fonts from '../constants/Font';
+import { useNavigation } from '@react-navigation/native';
+
 
 const { width } = Dimensions.get('window');
 
 const ProductDetails = () => {
+  const navigation = useNavigation(); 
+
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState('12x18');
   const [selectedColor, setSelectedColor] = useState(Colors.filterPalette[0]);
@@ -41,7 +45,7 @@ const ProductDetails = () => {
           <Text style={styles.title}>KASBAH</Text>
           <Text style={styles.subtitle}>Modern
             <Text style={styles.rating}> ⭐ 4.5 </Text>
-            <Text style={styles.reviewText}>(See Reviews)</Text>
+            <Text style={styles.reviewText} onPress={() => navigation.navigate('AllReviews')}>(See Reviews)</Text>
           </Text>
 
           <View style={styles.quantityRow}>
@@ -110,7 +114,7 @@ const ProductDetails = () => {
 
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.addToCart}><Text style={styles.buttonText}>ADD TO CART</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.buyNow}><Text style={styles.buttonText}>BUY NOW</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.buyNow} ><Text style={styles.buttonText}>BUY NOW</Text></TouchableOpacity>
           </View>
         </View>
       </ScrollView>
