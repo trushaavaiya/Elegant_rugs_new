@@ -49,6 +49,7 @@ const CategoryScreen = ({ navigation }) => {
           styles.categoryText,
           selected === item.id && styles.categoryTextSelected,
         ]}
+        numberOfLines={1}
       >
         {item.name}
       </Text>
@@ -148,11 +149,11 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
   },
   categoryBox: {
-    width: 70, 
+    width: (width - 88)/4, 
     margin: 6,
     backgroundColor: Colors.darkBox,
     alignItems: 'center',
-    paddingVertical: 14,
+    padding: 12,
     borderRadius: 8,
   },
   categoryBoxSelected: {
@@ -161,7 +162,7 @@ const styles = StyleSheet.create({
   categoryText: {
     color: Colors.white,
     marginTop: 8,
-    fontSize: Fonts.size.small,
+    fontSize: Fonts.size.xsmall,
     fontFamily: Fonts.regular,
     textAlign: 'center',
   },
