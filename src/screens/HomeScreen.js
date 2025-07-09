@@ -15,7 +15,7 @@ import Fonts from '../constants/Font';
 
 const { width } = Dimensions.get('window');
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
   const bannerImages = [
     require('../assets/sofa1.png'),
     require('../assets/sofa2.png'),
@@ -25,7 +25,10 @@ const HomeScreen = ({navigation}) => {
   const categoryData = [
     { title: 'All', image: require('../assets/category-all.png') },
     { title: 'Modern', image: require('../assets/category-modern.png') },
-    { title: 'Transitional', image: require('../assets/category-transitional.png') },
+    {
+      title: 'Transitional',
+      image: require('../assets/category-transitional.png'),
+    },
     { title: 'Geometric', image: require('../assets/category-geometric.png') },
     { title: 'Abstract', image: require('../assets/category-abstract.png') },
     { title: 'Classis', image: require('../assets/category-classis.png') },
@@ -41,56 +44,98 @@ const HomeScreen = ({navigation}) => {
   ];
   const services = [
     { label: 'Best Service', icon: require('../assets/service-best.png') },
-    { label: '100% Authentic', icon: require('../assets/service-authentic.png') },
+    {
+      label: '100% Authentic',
+      icon: require('../assets/service-authentic.png'),
+    },
     { label: 'Fastest Delivery', icon: require('../assets/service-fast.png') },
   ];
-
-  
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-
         <View style={styles.header}>
           <View style={styles.headerTop}>
             <Text style={styles.title}>Make Your</Text>
             <View style={styles.iconsRight}>
-              <Icon name="search-outline" size={24} color={Colors.white} style={styles.iconSpacing} />
-              <Icon name="notifications-outline" size={24} color={Colors.white} />
+              <Icon
+                name="search-outline"
+                size={24}
+                color={Colors.white}
+                style={styles.iconSpacing}
+              />
+              <Icon
+                name="notifications-outline"
+                size={24}
+                color={Colors.white}
+              />
             </View>
           </View>
-          <Text style={[styles.title, { fontWeight: 'bold' }]}>Interior More</Text>
+          <Text style={[styles.title, { fontWeight: 'bold' }]}>
+            Interior More
+          </Text>
           <Text style={styles.attractive}>ATTRACTIVE</Text>
 
-          <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}>
-            {bannerImages.map((img, index) => (
-              <View key={index} style={styles.bannerBox}>
-                <Image source={img} style={styles.bannerImage} resizeMode="contain" />
-                <View style={styles.discountBox}>
-                  <Text style={styles.discountText}>DISCOUNT</Text>
-                  <Text style={styles.discountPercent}>30%</Text>
-                  <Text style={styles.discountNote}>ALL RUGS</Text>
+         
+        </View>
+ <View
+            style={{
+              // position: 'absolute',
+              left: 0,
+              right: 0,
+              top: -40,
+              width:width,
+              // height:300,
+              alignItems:'center',
+              justifyContent:'centers',
+              // backgroundColor:'red'
+            }}
+          >
+            <ScrollView
+              horizontal
+              pagingEnabled
+              showsHorizontalScrollIndicator={false}
+              style={{width:(width-48)*3, paddingLeft:8, marginRight:16}}
+            >
+              {bannerImages.map((img, index) => (
+                <View key={index} style={styles.bannerBox}>
+                  <Image
+                    source={img}
+                    style={styles.bannerImage}
+                    resizeMode="contain"
+                  />
+                  <View style={styles.discountBox}>
+                    <Text style={styles.discountText}>DISCOUNT</Text>
+                    <Text style={styles.discountPercent}>30%</Text>
+                    <Text style={styles.discountNote}>ALL RUGS</Text>
+                  </View>
                 </View>
-              </View>
-            ))}
-          </ScrollView>
-          <View style={styles.dotsContainer}>
+              ))}
+            </ScrollView>
+          </View>
+          {/* <View style={styles.dotsContainer}>
             {bannerImages.map((_, index) => (
               <View key={index} style={styles.dot} />
             ))}
-          </View>
-        </View>
-
+          </View> */}
         <Text style={styles.sectionTitle}>TOP CATEGORIES</Text>
         <View style={styles.categoryGrid}>
           {categoryData.map((item, index) => (
             <TouchableOpacity
               key={index}
-              style={[styles.categoryItem, item.title === 'See All' && styles.seeAllCategory]}
+              style={[
+                styles.categoryItem,
+                item.title === 'See All' && styles.seeAllCategory,
+              ]}
               onPress={() => navigation.navigate('CategoryScreen')}
             >
               <Image source={item.image} style={styles.categoryIcon} />
-              <Text style={[styles.categoryText, item.title === 'See All' && styles.seeAllText]}>
+              <Text
+                style={[
+                  styles.categoryText,
+                  item.title === 'See All' && styles.seeAllText,
+                ]}
+              >
                 {item.title}
               </Text>
             </TouchableOpacity>
@@ -99,13 +144,10 @@ const HomeScreen = ({navigation}) => {
 
         {renderHorizontalList('ALL RUGS', rugImages.slice(0, 3))}
 
-        
         {renderHorizontalList('RECENTLY VIEWED', rugImages)}
 
-        
         {renderHorizontalList('SIMILAR PRODUCTS', rugImages)}
 
-        
         <View style={styles.serviceRow}>
           {services.map((item, index) => (
             <View key={index} style={styles.serviceItem}>
@@ -115,42 +157,45 @@ const HomeScreen = ({navigation}) => {
           ))}
         </View>
 
-        
         {renderHorizontalList('SPOTLIGHT RUGS', rugImages)}
 
-        
         <Text style={styles.sectionTitle}>SHOP BY SIZE (FT)</Text>
         <View style={styles.sizeList}>
-          {["12x16", "16x20", "20x24", "24x26", "26x28", "28x30"].map((size, index) => (
-            <View key={index} style={styles.sizeItem}>
-              <Text style={styles.sizeText}>{size}</Text>
-            </View>
-          ))}
+          {['12x16', '16x20', '20x24', '24x26', '26x28', '28x30'].map(
+            (size, index) => (
+              <View key={index} style={styles.sizeItem}>
+                <Text style={styles.sizeText}>{size}</Text>
+              </View>
+            ),
+          )}
         </View>
 
-        
-        {renderHorizontalList('POPULAR RUGS', rugImages)}  
+        {renderHorizontalList('POPULAR RUGS', rugImages)}
       </ScrollView>
       <View style={styles.bottomNav}>
-        {['Home', 'Category', 'Cart', 'Offers', 'Account'].map((item, index) => (
-          <TouchableOpacity key={index} style={styles.navItem}>
-            <Icon
-              name={
-                item === 'Home' ? 'home' :
-                item === 'Category' ? 'grid' :
-                item === 'Cart' ? 'cart' :
-                item === 'Offers' ? 'pricetags' : 'person'
-              }
-              size={22}
-              color={Colors.black}
-            />
-            <Text style={styles.navText}>{item}</Text>
-          </TouchableOpacity>
-        ))}
+        {['Home', 'Category', 'Cart', 'Offers', 'Account'].map(
+          (item, index) => (
+            <TouchableOpacity key={index} style={styles.navItem}>
+              <Icon
+                name={
+                  item === 'Home'
+                    ? 'home'
+                    : item === 'Category'
+                    ? 'grid'
+                    : item === 'Cart'
+                    ? 'cart'
+                    : item === 'Offers'
+                    ? 'pricetags'
+                    : 'person'
+                }
+                size={22}
+                color={Colors.black}
+              />
+              <Text style={styles.navText}>{item}</Text>
+            </TouchableOpacity>
+          ),
+        )}
       </View>
-
-      
-      
     </SafeAreaView>
   );
 };
@@ -166,15 +211,17 @@ const renderHorizontalList = (title, images) => (
           <Image source={img} style={styles.rugImage} />
           <Text style={styles.productName}>Rug {index + 1}</Text>
           <Text style={styles.productPrice}>₹ {8990 + index * 500}</Text>
-          <Icon name="cart-outline" size={16} color={Colors.primary} style={{ marginTop: 4 }} />
+          <Icon
+            name="cart-outline"
+            size={16}
+            color={Colors.primary}
+            style={{ marginTop: 4 }}
+          />
         </View>
       ))}
     </ScrollView>
   </View>
 );
-
-
-
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: Colors.white },
@@ -182,7 +229,11 @@ const styles = StyleSheet.create({
   headerTop: { flexDirection: 'row', justifyContent: 'space-between' },
   iconsRight: { flexDirection: 'row', alignItems: 'center' },
   iconSpacing: { marginRight: 10 },
-  title: { color: Colors.white, fontFamily: Fonts.regular, fontSize: Fonts.size.large },
+  title: {
+    color: Colors.white,
+    fontFamily: Fonts.regular,
+    fontSize: Fonts.size.large,
+  },
   attractive: {
     backgroundColor: Colors.primary,
     color: Colors.white,
@@ -198,28 +249,50 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white2,
     borderRadius: 12,
     padding: 12,
+    marginHorizontal:8,
+    width:width - 48
   },
   bannerImage: { width: width * 0.5, height: 100 },
   discountBox: { flex: 1, justifyContent: 'center', paddingLeft: 16 },
-  discountText: { fontFamily: Fonts.regular, fontSize: Fonts.size.small, color: Colors.black },
-  discountPercent: { fontFamily: Fonts.bold, fontSize: Fonts.size.xlarge, color: Colors.primary },
-  discountNote: { fontFamily: Fonts.regular, fontSize: Fonts.size.small, color: Colors.black },
-  dotsContainer: { flexDirection: 'row', justifyContent: 'center', marginTop: 8 },
-  dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: Colors.grey, marginHorizontal: 4 },
+  discountText: {
+    fontFamily: Fonts.regular,
+    fontSize: Fonts.size.small,
+    color: Colors.black,
+  },
+  discountPercent: {
+    fontFamily: Fonts.bold,
+    fontSize: Fonts.size.xlarge,
+    color: Colors.primary,
+  },
+  discountNote: {
+    fontFamily: Fonts.regular,
+    fontSize: Fonts.size.small,
+    color: Colors.black,
+  },
+  dotsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 8,
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: Colors.grey,
+    marginHorizontal: 4,
+  },
   sectionTitle: {
     fontFamily: Fonts.bold,
     fontSize: Fonts.size.medium,
     color: Colors.black,
     marginHorizontal: 16,
     marginVertical: 12,
-    
   },
   categoryGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     marginHorizontal: 16,
-    
   },
   categoryItem: {
     width: '22%',
@@ -278,7 +351,6 @@ const styles = StyleSheet.create({
     height: 50,
     resizeMode: 'contain',
     marginBottom: 8,
-    
   },
   serviceText: {
     fontFamily: Fonts.regular,
@@ -317,8 +389,6 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.regular,
     color: Colors.black,
   },
-  
-  
 });
 
 export default HomeScreen;
