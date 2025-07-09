@@ -19,6 +19,7 @@ import FilterModal from '../screens/FilterModal';                     //14
 import ProductDetails from '../screens/ProductDetails';               //15
 import AllReviews from '../screens/AllReviews';                       //16
 import BulkBookingModal from '../screens/BulkBookingModal';           //17
+import ThankYouScreen from '../screens/ThankYouScreen';               //18
 
 
 const Stack = createStackNavigator();
@@ -47,6 +48,7 @@ const Root = () => {
         <Stack.Screen name="ProductDetails" component={ProductDetails} />
         <Stack.Screen name="AllReviews" component={AllReviews} />
         <Stack.Screen name="BulkBookingModal" component={BulkBookingModal} />
+        <Stack.Screen name="ThankYouScreen" component={ThankYouScreen} />
 
 
       </Stack.Navigator>
