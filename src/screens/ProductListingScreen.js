@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -12,6 +12,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '../constants/Color';
 import Fonts from '../constants/Font';
+import FilterModal from './FilterModal'; 
 
 const { width } = Dimensions.get('window');
 const cardSpacing = 16;
@@ -26,13 +27,14 @@ const products = [
   { title: 'INDE ROSE', subtitle: 'Rug', price: '₹ 8,990', image: require('../assets/rug1.png') },
 ];
 
+const ProductListingScreen = ({navigation}) => {
+  const [filterVisible, setFilterVisible] = useState(false);
 
-const ProductListingScreen = ({ navigation }) => {
-    const renderItem = ({ item }) => (
+  const renderItem = ({ item }) => (
     <View style={styles.card}>
       <View style={styles.imageContainer}>
         <Image source={item.image} style={styles.image} resizeMode="cover" />
-        <TouchableOpacity style={styles.cartButton}>
+        <TouchableOpacity style={styles.cartButton} onPress={() => setFilterVisible(true)}>
           <Icon name="bag-handle-outline" size={16} color={Colors.white} />
         </TouchableOpacity>
       </View>
@@ -44,50 +46,48 @@ const ProductListingScreen = ({ navigation }) => {
     </View>
   );
 
-    return(
-        <SafeAreaView style={styles.container}>
-              <View style={styles.header}>
-                <TouchableOpacity>
-                  <Icon name="arrow-back" size={24} color={Colors.white} />
-                </TouchableOpacity>
-                <Text style={styles.headerTitle}>Product Listing</Text>
-                <View style={styles.headerIcons}>
-                  <TouchableOpacity>
-                    <Icon name="search" size={22} color={Colors.white} style={{ marginRight: 16 }} />
-                  </TouchableOpacity>
-                  <TouchableOpacity>
-                    <Icon name="funnel-outline" size={22} color={Colors.white} />
-                  </TouchableOpacity>
-                </View>
-              </View>
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity>
+          <Icon name="arrow-back" size={24} color={Colors.white} />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Product Listing</Text>
+        <View style={styles.headerIcons}>
+          <TouchableOpacity>
+            <Icon name="search" size={22} color={Colors.white} style={{ marginRight: 16 }} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setFilterVisible(true)}>
+            <Icon name="funnel-outline" size={22} color={Colors.white} />
+          </TouchableOpacity>
+        </View>
+      </View>
 
-              <View style={styles.content}>
-                      <Text style={styles.productCount}>460 PRODUCTS FOUND</Text>
-                      <FlatList
-                        data={products}
-                        renderItem={renderItem}
-                        keyExtractor={(_, index) => index.toString()}
-                        numColumns={2}
-                        columnWrapperStyle={{ justifyContent: 'space-between' }}
-                        contentContainerStyle={{ paddingBottom: 20 }}
-                        showsVerticalScrollIndicator={false}
-                      />
-              </View>
-        
-              
-            </SafeAreaView>
+      <View style={styles.content}>
+        <Text style={styles.productCount}>460 PRODUCTS FOUND</Text>
+        <FlatList
+          data={products}
+          renderItem={renderItem}
+          keyExtractor={(_, index) => index.toString()}
+          numColumns={2}
+          columnWrapperStyle={{ justifyContent: 'space-between' }}
+          contentContainerStyle={{ paddingBottom: 20 }}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
 
-
-    );
-  
-  
+      {filterVisible && (
+        <FilterModal onClose={() => setFilterVisible(false)}  />
+      )}
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
-    container: {
+  container: {
     flex: 1,
     backgroundColor: Colors.background,
-    paddingTop:40,
+    paddingTop: 40,
   },
   header: {
     flexDirection: 'row',
@@ -164,7 +164,6 @@ const styles = StyleSheet.create({
     color: Colors.black,
     marginTop: 4,
   },
-  
 });
 
 export default ProductListingScreen;
