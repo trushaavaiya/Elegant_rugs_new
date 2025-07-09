@@ -47,13 +47,13 @@ const reviews = [
 ];
 
 
-const AllReviews = () => {
+const AllReviews = ({ navigation }) => {
   return (
     <>
       <StatusBar backgroundColor={Colors.black} barStyle="light-content" />
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.header}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.goBack('')}>
             <Icon name="arrow-back" size={24} color={Colors.white} />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>All Reviews</Text>
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     safeArea: {
     flex: 1,
     backgroundColor: Colors.white, 
+    top:35,
   },
   header: {
     flexDirection: 'row',
