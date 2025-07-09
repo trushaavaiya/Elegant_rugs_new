@@ -77,7 +77,7 @@ const BulkBookingModal = ({ visible, onClose }) => {
               <TouchableOpacity style={styles.cancelButton} onPress={() => navigation.goBack('')}>
                 <Text style={styles.cancelText}>CANCEL</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.submitButton}>
+              <TouchableOpacity style={styles.submitButton} onPress={() => navigation.navigate('ThankYouScreen')}>
                 <Text style={styles.submitText}>SUBMIT</Text>
               </TouchableOpacity>
             </View>
