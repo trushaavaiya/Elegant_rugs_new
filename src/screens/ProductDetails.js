@@ -63,7 +63,7 @@ const ProductDetails = () => {
 
           <View style={styles.sectionHeaderRow}>
             <Text style={styles.sectionHeader}>NEED BULK BOOKING ?</Text>
-            <TouchableOpacity><Text style={styles.plus}>+</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('BulkBookingModal')}><Text style={styles.plus}>+</Text></TouchableOpacity>
           </View>
 
           <Text style={styles.sectionHeader}>Shop By Size (Ft)</Text>
