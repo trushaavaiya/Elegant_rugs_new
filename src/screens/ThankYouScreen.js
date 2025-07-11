@@ -18,7 +18,7 @@ const ThankYouScreen = () => {
   const navigation = useNavigation();
 
   const handleGoHome = () => {
-    navigation.navigate('Home'); 
+    navigation.navigate('HomeScreen'); 
   };
 
   return (
