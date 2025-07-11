@@ -20,6 +20,12 @@ import ProductDetails from '../screens/ProductDetails';               //15
 import AllReviews from '../screens/AllReviews';                       //16
 import BulkBookingModal from '../screens/BulkBookingModal';           //17
 import ThankYouScreen from '../screens/ThankYouScreen';               //18
+import CategorySelectionScreen from '../screens/CategorySelectionScreen'; //19
+import OfferScreen from '../screens/OfferScreen';                         //20
+import AccountScreen from '../screens/AccountScreen';                     //21
+import WishlistScreen from '../screens/WishlistScreen';                   //22
+import SettingsScreen from '../screens/SettingsScreen';                   //23
+
 
 
 const Stack = createStackNavigator();
@@ -49,8 +55,12 @@ const Root = () => {
         <Stack.Screen name="AllReviews" component={AllReviews} />
         <Stack.Screen name="BulkBookingModal" component={BulkBookingModal} />
         <Stack.Screen name="ThankYouScreen" component={ThankYouScreen} />
-
-
+        <Stack.Screen name="CategorySelectionScreen" component={CategorySelectionScreen} />
+        <Stack.Screen name="OfferScreen" component={OfferScreen} />
+        <Stack.Screen name="AccountScreen" component={AccountScreen} />
+        <Stack.Screen name="WishlistScreen" component={WishlistScreen} />
+        <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
