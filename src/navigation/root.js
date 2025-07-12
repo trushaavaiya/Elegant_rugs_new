@@ -25,6 +25,7 @@ import OfferScreen from '../screens/OfferScreen';                         //20
 import AccountScreen from '../screens/AccountScreen';                     //21
 import WishlistScreen from '../screens/WishlistScreen';                   //22
 import SettingsScreen from '../screens/SettingsScreen';                   //23
+import ChangePasswordScreen from '../screens/ChangePasswordScreen';       //24
 
 
 
@@ -60,6 +61,8 @@ const Root = () => {
         <Stack.Screen name="AccountScreen" component={AccountScreen} />
         <Stack.Screen name="WishlistScreen" component={WishlistScreen} />
         <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+        <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
+
         
       </Stack.Navigator>
     </NavigationContainer>
