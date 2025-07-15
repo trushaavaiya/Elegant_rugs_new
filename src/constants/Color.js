@@ -35,6 +35,7 @@ const Colors = {
 
   starcolor:'#F39C12',
   discount:'#E74C3C',
+  yellow :'#FFD54F',
 
 };
 
