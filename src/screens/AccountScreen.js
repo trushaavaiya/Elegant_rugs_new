@@ -109,10 +109,10 @@ const MenuItem = ({ icon, label, navigation }) => {
         navigation.navigate('ProfileScreen');
         break;
       case 'My Address':
-        navigation.navigate('AddressScreen');
+        navigation.navigate('MyAddressScreen');
         break;
       case 'My Orders':
-        navigation.navigate('OrdersScreen');
+        navigation.navigate('MyOrdersScreen');
         break;
       case 'Wishlist':
         navigation.navigate('WishlistScreen');
