@@ -26,6 +26,12 @@ import AccountScreen from '../screens/AccountScreen';                     //21
 import WishlistScreen from '../screens/WishlistScreen';                   //22
 import SettingsScreen from '../screens/SettingsScreen';                   //23
 import ChangePasswordScreen from '../screens/ChangePasswordScreen';       //24
+import NotificationScreen from '../screens/NotificationScreen';           //25
+import ProfileScreen from '../screens/ProfileScreen';                     //26
+import EditProfileScreen from '../screens/EditProfileScreen';             //27
+import MyAddressScreen from '../screens/MyAddressScreen';                 //28
+import AddNewAddressScreen from '../screens/AddNewAddressScreen';         //29
+
 
 
 
@@ -62,6 +68,11 @@ const Root = () => {
         <Stack.Screen name="WishlistScreen" component={WishlistScreen} />
         <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
         <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
+        <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+        <Stack.Screen name="MyAddressScreen" component={MyAddressScreen} />
+        <Stack.Screen name="AddNewAddressScreen" component={AddNewAddressScreen} />
 
         
       </Stack.Navigator>
