@@ -31,10 +31,10 @@ const SettingsScreen = ({ navigation }) => {
         navigation.navigate('');
         break;
       case '3':
-        navigation.navigate('');
+        navigation.navigate('PrivacyPolicyScreen');
         break;
       case '4':
-        navigation.navigate('');
+        navigation.navigate('TermsAndConditionsScreen');
         break;
       default:
         break;
