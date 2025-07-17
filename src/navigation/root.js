@@ -26,6 +26,18 @@ import AccountScreen from '../screens/AccountScreen';                     //21
 import WishlistScreen from '../screens/WishlistScreen';                   //22
 import SettingsScreen from '../screens/SettingsScreen';                   //23
 import ChangePasswordScreen from '../screens/ChangePasswordScreen';       //24
+// import NotificationScreen from '../screens/NotificationScreen';           //25
+// import ProfileScreen from '../screens/ProfileScreen';                     //26
+// import EditProfileScreen from '../screens/EditProfileScreen';             //27
+// import MyAddressScreen from '../screens/MyAddressScreen';                 //28
+// import AddNewAddressScreen from '../screens/AddNewAddressScreen';         //29
+import MyOrdersScreen from '../screens/MyOrdersScreen';                   //30
+import OrderInvoiceScreen from '../screens/OrderInvoiceScreen';           //31
+import RateReviewScreen from '../screens/RateReviewScreen';               //32
+import PrivacyPolicyScreen from '../screens/PrivacyPolicyScreen';         //33
+import TermsAndConditionsScreen from '../screens/TermsAndConditionsScreen'; //34
+import CartScreen from '../screens/CartScreen';                             //35
+import ApplyCouponsScreen from '../screens/ApplyCouponsScreen';             //36
 
 
 
@@ -62,6 +74,19 @@ const Root = () => {
         <Stack.Screen name="WishlistScreen" component={WishlistScreen} />
         <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
         <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
+        {/* <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+        <Stack.Screen name="MyAddressScreen" component={MyAddressScreen} />
+        <Stack.Screen name="AddNewAddressScreen" component={AddNewAddressScreen} /> */}
+        <Stack.Screen name="MyOrdersScreen" component={MyOrdersScreen} />
+        <Stack.Screen name="OrderInvoiceScreen" component={OrderInvoiceScreen} />
+        <Stack.Screen name="RateReviewScreen" component={RateReviewScreen} />
+        <Stack.Screen name="PrivacyPolicyScreen" component={PrivacyPolicyScreen} />
+        <Stack.Screen name="TermsAndConditionsScreen" component={TermsAndConditionsScreen} />
+        <Stack.Screen name="CartScreen" component={CartScreen} />
+        <Stack.Screen name="ApplyCouponsScreen" component={ApplyCouponsScreen} />
+        
 
         
       </Stack.Navigator>
