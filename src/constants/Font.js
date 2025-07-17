@@ -1,6 +1,8 @@
 const Fonts = {
   regular: 'Montserrat-Regular',         
-  bold: 'PlayfairDisplay-Bold' ,           
+  bold: 'PlayfairDisplay-Bold' ,     
+  MontserratRegular: 'Montserrat-Regular',
+  MontserratSemiBold: 'Montserrat-SemiBold',      
   size: {
     small: 14,
     small2:16,
